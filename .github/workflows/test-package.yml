@@ -9,8 +9,6 @@ on:
   schedule:
     - cron: "0 0 * * 0"
 
-env:
-  PUB_ENVIRONMENT: bot.github
 
 jobs:
   # Check code formatting and static analysis on a single OS (linux)
