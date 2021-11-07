@@ -15,10 +15,15 @@ import 'reference.dart';
 import 'type_function.dart';
 
 part 'expression/binary.dart';
+
 part 'expression/closure.dart';
+
 part 'expression/code.dart';
+
 part 'expression/invoke.dart';
+
 part 'expression/literal.dart';
+
 part 'expression/parenthesized.dart';
 
 /// Represents a [code] block that wraps an [Expression].
@@ -167,24 +172,24 @@ abstract class Expression implements Spec {
 
   /// Returns the result of `this` `&` [other].
   Expression operatorBitwiseAnd(Expression other) => BinaryExpression._(
-    expression,
-    other,
-    '&',
-  );
+        expression,
+        other,
+        '&',
+      );
 
   /// Returns the result of `this` `|` [other].
   Expression operatorBitwiseOr(Expression other) => BinaryExpression._(
-    expression,
-    other,
-    '|',
-  );
+        expression,
+        other,
+        '|',
+      );
 
   /// Returns the result of `this` `^` [other].
   Expression operatorBitwiseXor(Expression other) => BinaryExpression._(
-    expression,
-    other,
-    '^',
-  );
+        expression,
+        other,
+        '^',
+      );
 
   Expression conditional(Expression whenTrue, Expression whenFalse) =>
       BinaryExpression._(
@@ -371,14 +376,23 @@ class ToCodeExpression implements Code {
 /// **INTERNAL ONLY**.
 abstract class ExpressionVisitor<T> implements SpecVisitor<T> {
   T visitToCodeExpression(ToCodeExpression code, [T? context]);
+
   T visitBinaryExpression(BinaryExpression expression, [T? context]);
+
   T visitClosureExpression(ClosureExpression expression, [T? context]);
+
   T visitCodeExpression(CodeExpression expression, [T? context]);
+
   T visitInvokeExpression(InvokeExpression expression, [T? context]);
+
   T visitLiteralExpression(LiteralExpression expression, [T? context]);
+
   T visitLiteralListExpression(LiteralListExpression expression, [T? context]);
+
   T visitLiteralSetExpression(LiteralSetExpression expression, [T? context]);
+
   T visitLiteralMapExpression(LiteralMapExpression expression, [T? context]);
+
   T visitParenthesizedExpression(ParenthesizedExpression expression,
       [T? context]);
 }
