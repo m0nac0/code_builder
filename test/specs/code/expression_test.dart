@@ -602,6 +602,6 @@ void main() {
 
   test('should emit an operator bitwise xor call', () {
     expect(refer('foo').operatorBracketAccessor(refer('foo2')),
-        equalsDart('foo[foo2]'));
+        equalsDart('foo [ foo2 ]'));
   });
 }
