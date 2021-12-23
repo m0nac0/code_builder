@@ -191,6 +191,13 @@ abstract class Expression implements Spec {
         '^',
       );
 
+  /// Returns the result of `this`[other]
+  Expression operatorBracketAccessor(Expression other) => BinaryExpression._(
+    expression,
+    BinaryExpression._(other, _empty, ']'),
+    '[',
+  );
+
   Expression conditional(Expression whenTrue, Expression whenFalse) =>
       BinaryExpression._(
         expression,
